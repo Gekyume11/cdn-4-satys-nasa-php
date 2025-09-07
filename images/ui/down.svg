@@ -1,0 +1,38 @@
+<svg
+  preserveAspectRatio="xMidYMid meet"
+  width="100%"
+  viewBox="0 0 1683 150"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="extreme-glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="25" result="blur1" />
+      <feGaussianBlur stdDeviation="45" result="blur2" />
+      <feGaussianBlur stdDeviation="65" result="blur3" />
+      <feColorMatrix
+        in="blur3"
+        type="matrix"
+        values="2 0 0 0 0  
+                0 2 0 0 0  
+                0 0 3 0 0  
+                0 0 0 3 -0.8"
+        result="glowColor"
+      />
+      <feMerge>
+        <feMergeNode in="glowColor" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur3" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <path
+    d="M1680 1H0V142.531H567.5L658.5 67.0792H1451L1558 143H1680V1Z"
+    filter="url(#extreme-glow)"
+    fill="none"
+    stroke="#65C3DB"
+    stroke-width="2"
+  />
+</svg>
